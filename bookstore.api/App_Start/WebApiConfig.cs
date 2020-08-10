@@ -18,7 +18,7 @@ namespace bookstore.api
                     RegisterRoutes(httpConf);
                 });
             }
-            catch (Exception ex)
+            catch (Exception)
             {
             }
         }

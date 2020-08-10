@@ -97,7 +97,9 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="index.html" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -117,6 +119,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bookstore.controllers\bookstore.controllers.csproj">
+      <Project>{07d0065c-aa66-4357-b9eb-2514a844ec06}</Project>
+      <Name>bookstore.controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\bookstore.sandbox.controllers\bookstore.sandbox.controllers.csproj">
+      <Project>{200ed2bb-92b2-437b-a6e4-691dd3de900d}</Project>
+      <Name>bookstore.sandbox.controllers</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/bookstore.api/App_Start/ConfigProfile.cs
+/bookstore.api/Controllers/TestController.cs
+/bookstore.api/Controllers.cs
+/bookstore.api/App_Start/WebApiConfig.cs
+/bookstore.api/Controllers/TestController2.cs
