@@ -1,4 +1,5 @@
-﻿using SimpleInjector;
+﻿using bUtility.Logging;
+using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using System;
 using System.Web.Http;
@@ -16,6 +17,7 @@ namespace bookstore.api
                 GlobalConfiguration.Configure(httpConf =>
                 {
                     RegisterRoutes(httpConf);
+                    RegisterLogger();
                 });
             }
             catch (Exception)
@@ -41,5 +43,11 @@ namespace bookstore.api
             GlobalConfiguration.Configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
             GlobalConfiguration.Configuration.DependencyResolver = new SimpleInjectorWebApiDependencyResolver(Container);
         }
+
+        public static void RegisterLogger()
+        {
+            Container.Register(() => Logger.Current, Lifestyle.Singleton);
+        }
+        
     }
 }

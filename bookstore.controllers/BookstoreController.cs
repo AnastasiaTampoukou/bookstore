@@ -10,7 +10,6 @@ namespace bookstore.controllers
         public BookstoreController() { }
 
         [HttpGet]
-        [ActionName("savara")]
         public string Test()
         {
            
