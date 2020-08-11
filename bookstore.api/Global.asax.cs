@@ -9,7 +9,7 @@ namespace bookstore.api
     {
         private static readonly string _logSourceName = "BookstoreApiSource";
         private static readonly ILogger _logger = new Logger(_logSourceName);
-        private static readonly BookstoreController bookStoreController = new BookstoreController();
+       
 
         protected void Application_Start(object sender, EventArgs e)
         {
