@@ -72,5 +72,15 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bookstore.implementation\bookstore.implementation.csproj">
+      <Project>{448515A8-696C-4738-BC63-D077C2FFC6C0}</Project>
+      <Name>bookstore.implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\bookstore.interfaces\bookstore.interfaces.csproj">
+      <Project>{4C48D014-9B15-41B3-A50A-2B4DA4F927FC}</Project>
+      <Name>bookstore.interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

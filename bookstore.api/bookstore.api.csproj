@@ -129,6 +129,14 @@
       <Project>{07d0065c-aa66-4357-b9eb-2514a844ec06}</Project>
       <Name>bookstore.controllers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\bookstore.implementation\bookstore.implementation.csproj">
+      <Project>{448515a8-696c-4738-bc63-d077c2ffc6c0}</Project>
+      <Name>bookstore.implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\bookstore.interfaces\bookstore.interfaces.csproj">
+      <Project>{4c48d014-9b15-41b3-a50a-2b4da4f927fc}</Project>
+      <Name>bookstore.interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\bookstore.sandbox.controllers\bookstore.sandbox.controllers.csproj">
       <Project>{200ed2bb-92b2-437b-a6e4-691dd3de900d}</Project>
       <Name>bookstore.sandbox.controllers</Name>

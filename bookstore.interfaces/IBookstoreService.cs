@@ -8,5 +8,8 @@ namespace bookstore.interfaces
 {
     public interface IBookstoreService
     {
+        
+        string Test();
+        
     }
 }

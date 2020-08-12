@@ -1,4 +1,6 @@
-﻿using bUtility.Logging;
+﻿using bookstore.implementation;
+using bookstore.interfaces;
+using bUtility.Logging;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using System;
@@ -18,6 +20,7 @@ namespace bookstore.api
                 {
                     RegisterRoutes(httpConf);
                     RegisterLogger();
+                    RegisterServices();
                 });
             }
             catch (Exception)
@@ -47,6 +50,10 @@ namespace bookstore.api
         public static void RegisterLogger()
         {
             Container.Register(() => Logger.Current, Lifestyle.Singleton);
+        }
+        public static void RegisterServices()
+        {
+            Container.Register<IBookstoreService, BookstoreService>(Lifestyle.Singleton);
         }
         
     }
