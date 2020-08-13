@@ -14,7 +14,7 @@
     <RootNamespace>bookstore.api</RootNamespace>
     <AssemblyName>bookstore.api</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -43,15 +43,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="bUtility, Version=0.0.0.5, Culture=neutral, PublicKeyToken=e2a60ca179fe72cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\bUtility.0.0.0.5\lib\net45\bUtility.dll</HintPath>
+    </Reference>
     <Reference Include="bUtility.Logging, Version=0.0.0.1, Culture=neutral, PublicKeyToken=e2a60ca179fe72cb, processorArchitecture=MSIL">
       <HintPath>..\packages\bUtility.Logging.0.0.0.1\lib\net45\bUtility.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="bUtility.SecurityToken, Version=0.0.0.2, Culture=neutral, PublicKeyToken=e2a60ca179fe72cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\bUtility.SecurityToken.0.0.0.2\lib\net45\bUtility.SecurityToken.dll</HintPath>
+    </Reference>
+    <Reference Include="bUtility.WebApi, Version=1.0.0.20, Culture=neutral, PublicKeyToken=e2a60ca179fe72cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\bUtility.WebApi.1.0.0.20\lib\net461\bUtility.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="SimpleInjector, Version=5.0.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
       <HintPath>..\packages\SimpleInjector.5.0.3\lib\net461\SimpleInjector.dll</HintPath>
@@ -157,7 +166,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54124</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/bookstore.api</IISUrl>
+          <IISUrl>http://localhost:54124/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

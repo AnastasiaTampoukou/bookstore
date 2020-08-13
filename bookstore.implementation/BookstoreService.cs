@@ -1,10 +1,6 @@
 ﻿using bookstore.interfaces;
-using bUtility.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace bookstore.implementation
 {
@@ -20,6 +16,11 @@ namespace bookstore.implementation
             DateTime now = DateTime.Now;
             return now.ToString("dd/MM/yyyy"); ;
            
+        }
+        public Exception TestWithException()
+        {
+
+            throw new System.Exception("This is a test exception");
         }
     }
 }

@@ -2,6 +2,7 @@
 using bookstore.interfaces;
 using bUtility.Logging;
 using System;
+using System.Security.Principal;
 using System.Web.Http;
 
 namespace bookstore.controllers
@@ -10,11 +11,13 @@ namespace bookstore.controllers
     {
         private readonly ILogger _logger;
         private readonly IBookstoreService _bookstoreService;
+        //private readonly bUtility.ExceptionHandler _exceptionHandler;
 
         public BookstoreController(ILogger logger, IBookstoreService bookstoreService)
         {
             _logger = logger;
             _bookstoreService = bookstoreService;
+            //_exceptionHandler = new bUtility.ExceptionHandler(logger, ex=>(ex as ), typeof(Exception) );
         }
 
 
@@ -23,6 +26,12 @@ namespace bookstore.controllers
         {
             _logger.Info($"Test endpoint called on : {_bookstoreService.Test()}");
             return "Hello from Bookstore API";
+        }
+        [HttpGet]
+        public string TestWithException()
+        {
+            _logger.Info($"{_bookstoreService.TestWithException()}");
+            return "Hello Exception";
         }
     }
 }
