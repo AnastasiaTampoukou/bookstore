@@ -60,6 +60,7 @@ namespace bookstore.api
         }
         public static void RegisterGlobalFilters(HttpFilterCollection filterss)
         {
+
             //filterss.Add(new AuthorizeAttribute());
             filterss.Add(new ExceptionHandlingAttribute());
         }
