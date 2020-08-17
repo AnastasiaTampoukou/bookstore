@@ -73,6 +73,10 @@
       <Project>{4C48D014-9B15-41B3-A50A-2B4DA4F927FC}</Project>
       <Name>bookstore.interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\name.types\bookstore.types.csproj">
+      <Project>{562F8324-3E17-47F1-956B-EC7D80A011AC}</Project>
+      <Name>bookstore.types</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

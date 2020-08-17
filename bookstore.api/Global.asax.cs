@@ -1,4 +1,5 @@
-﻿using bookstore.controllers;
+﻿using bookstore.api.App_Start;
+using bookstore.controllers;
 using bUtility.Logging;
 using System;
 using System.Web.Http;
@@ -11,10 +12,10 @@ namespace bookstore.api
         private static readonly ILogger _logger = new Logger(_logSourceName);
        
 
-        protected void Application_Start(object sender, EventArgs e)
+        protected void Application_Start(object sender, EventArgs e, ConfigProfile cp)
         {
             Logger.SetCurrent(_logger);
-            WebApiConfig.Configure();
+            WebApiConfig.Configure(cp);
             GlobalConfiguration.Configuration.EnsureInitialized();
             Logger.Current.Info("Application Started");
         }

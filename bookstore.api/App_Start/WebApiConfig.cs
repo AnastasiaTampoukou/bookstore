@@ -1,12 +1,15 @@
-﻿using bookstore.implementation;
+﻿using bookstore.api.App_Start;
+using bookstore.implementation;
 using bookstore.interfaces;
 using bUtility.Logging;
 using bUtility.WebApi;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using System;
+using System.Data;
 using System.Web.Http;
 using System.Web.Http.Filters;
+using static bookstore.types.GeneralTypes;
 
 namespace bookstore.api
 {
@@ -14,7 +17,7 @@ namespace bookstore.api
     {
         private static readonly Container Container = new Container();
 
-        public static void Configure()
+        public static void Configure(ConfigProfile cp)
         {
             try
             {
@@ -24,6 +27,7 @@ namespace bookstore.api
                     RegisterLogger();
                     RegisterServices();
                     RegisterGlobalFilters(httpConf.Filters);
+                    RegisterSqlFactories(cp);
                 });
             }
             catch (Exception)
@@ -63,6 +67,11 @@ namespace bookstore.api
 
             //filterss.Add(new AuthorizeAttribute());
             filterss.Add(new ExceptionHandlingAttribute());
+        }
+
+        public static void RegisterSqlFactories(ConfigProfile cp)
+        {
+            Container.RegisterSingleton<DbProvider<IDbConnection>>(() => () => cp.AuditDbConnection());
         }
         
     }

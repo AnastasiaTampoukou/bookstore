@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace bookstore.types
 {
-    public class Class1
+    public class GeneralTypes
     {
+        public delegate T DbProvider<out T>();
     }
+    
 }

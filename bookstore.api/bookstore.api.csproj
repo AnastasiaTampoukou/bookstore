@@ -14,7 +14,7 @@
     <RootNamespace>bookstore.api</RootNamespace>
     <AssemblyName>bookstore.api</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -43,8 +43,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="bUtility, Version=0.0.0.5, Culture=neutral, PublicKeyToken=e2a60ca179fe72cb, processorArchitecture=MSIL">
-      <HintPath>..\packages\bUtility.0.0.0.5\lib\net45\bUtility.dll</HintPath>
+    <Reference Include="bUtility, Version=0.0.0.7, Culture=neutral, PublicKeyToken=e2a60ca179fe72cb, processorArchitecture=MSIL">
+      <HintPath>..\packages\bUtility.0.0.0.7\lib\net45\bUtility.dll</HintPath>
     </Reference>
     <Reference Include="bUtility.Logging, Version=0.0.0.1, Culture=neutral, PublicKeyToken=e2a60ca179fe72cb, processorArchitecture=MSIL">
       <HintPath>..\packages\bUtility.Logging.0.0.0.1\lib\net45\bUtility.Logging.dll</HintPath>
@@ -114,6 +114,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\ConfigProfile.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -124,6 +125,7 @@
     <Content Include="Configuration\Common\System.Diagnostics.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Configuration\Debug\appSettings.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -150,6 +152,10 @@
       <Project>{200ed2bb-92b2-437b-a6e4-691dd3de900d}</Project>
       <Name>bookstore.sandbox.controllers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\name.types\bookstore.types.csproj">
+      <Project>{562f8324-3e17-47f1-956b-ec7d80a011ac}</Project>
+      <Name>bookstore.types</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -166,7 +172,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54124</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54124/</IISUrl>
+          <IISUrl>http://localhost/bookstore.api</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
