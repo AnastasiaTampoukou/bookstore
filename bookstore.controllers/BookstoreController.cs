@@ -33,5 +33,10 @@ namespace bookstore.controllers
             _logger.Info($"{_bookstoreService.TestWithException()}");
             return "Hello Exception";
         }
+        [HttpPost]
+        public string TestDatabaseConnection()
+        {
+            return _bookstoreService.TestDatabaseConnection();
+        }
     }
 }

@@ -12,10 +12,12 @@ namespace bookstore.api
         private static readonly ILogger _logger = new Logger(_logSourceName);
        
 
-        protected void Application_Start(object sender, EventArgs e, ConfigProfile cp)
+        protected void Application_Start(object sender, EventArgs e)
         {
             Logger.SetCurrent(_logger);
+            var cp = ConfigProfile.LoadConfigurationProfile();
             WebApiConfig.Configure(cp);
+            
             GlobalConfiguration.Configuration.EnsureInitialized();
             Logger.Current.Info("Application Started");
         }

@@ -10,6 +10,8 @@ namespace bookstore.interfaces
     {
         Exception TestWithException();
         string Test();
-        
+        string TestDatabaseConnection();
+
+
     }
 }
