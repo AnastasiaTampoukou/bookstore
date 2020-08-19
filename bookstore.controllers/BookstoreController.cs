@@ -38,5 +38,11 @@ namespace bookstore.controllers
         {
             return _bookstoreService.TestDatabaseConnection();
         }
+        [HttpGet]
+        public string GetAllBooks()
+        {
+            
+            return "Hello ";
+        }
     }
 }
