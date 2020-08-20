@@ -1,6 +1,7 @@
 ﻿using bookstore.implementation;
 using bookstore.interfaces;
 using bUtility.Logging;
+using bUtility.Reflection;
 using System;
 using System.Security.Principal;
 using System.Web.Http;
@@ -30,8 +31,12 @@ namespace bookstore.controllers
         [HttpGet]
         public void TestWithException()
         {
-            _bookstoreService.TestWithException();
-            
+            try {
+                _bookstoreService.TestWithException();
+            } catch (Exception e) {
+                _logger.Error(e.Message);
+                throw;
+            }
         }
         [HttpPost]
         public string TestDatabaseConnection()
