@@ -8,7 +8,7 @@ namespace bookstore.interfaces
 {
     public interface IBookstoreService
     {
-        Exception TestWithException();
+        void TestWithException();
         string Test();
         string TestDatabaseConnection();
 

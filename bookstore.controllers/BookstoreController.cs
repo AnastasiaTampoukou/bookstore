@@ -28,10 +28,10 @@ namespace bookstore.controllers
             return "Hello from Bookstore API";
         }
         [HttpGet]
-        public string TestWithException()
+        public void TestWithException()
         {
-            _logger.Info($"{_bookstoreService.TestWithException()}");
-            return "Hello Exception";
+            _bookstoreService.TestWithException();
+            
         }
         [HttpPost]
         public string TestDatabaseConnection()

@@ -22,10 +22,11 @@ namespace bookstore.implementation
             return now.ToString("dd/MM/yyyy"); ;
            
         }
-        public Exception TestWithException()
+        public void TestWithException()
         {
-
+            _logger.Error("This is a test exception");
             throw new System.Exception("This is a test exception");
+
         }
         public string TestDatabaseConnection()
         {
