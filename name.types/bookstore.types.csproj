@@ -7,8 +7,8 @@
     <ProjectGuid>{562F8324-3E17-47F1-956B-EC7D80A011AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>name.types</RootNamespace>
-    <AssemblyName>name.types</AssemblyName>
+    <RootNamespace>bookstore.types</RootNamespace>
+    <AssemblyName>bookstore.types</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="GeneralTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BookstoreException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

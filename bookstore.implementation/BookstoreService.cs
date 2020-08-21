@@ -1,7 +1,9 @@
 ﻿using bookstore.interfaces;
+using bookstore.types;
 using bUtility.Logging;
 using System;
 using System.Data;
+using System.Runtime.Remoting.Messaging;
 using static bookstore.types.GeneralTypes;
 
 namespace bookstore.implementation
@@ -25,6 +27,11 @@ namespace bookstore.implementation
         public void TestWithException()
         {
             throw new Exception("This is a test exception");
+        }
+        public string TestWithExceptionHandler()
+        {
+            return "Hello";
+            //throw new BookstoreException(103,"Hello");
         }
         public string TestDatabaseConnection()
         {
