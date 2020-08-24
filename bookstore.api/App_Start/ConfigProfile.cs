@@ -1,11 +1,8 @@
 ﻿using bUtility.WebApi;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Web;
 
-namespace bookstore.api.App_Start
+namespace bookstore.api
 {
     public class ConfigProfile : ConfigurationProxy
     {
@@ -17,6 +14,7 @@ namespace bookstore.api.App_Start
             c.Open();
             return c;
         };
+
         public static ConfigProfile LoadConfigurationProfile()
         {
             Current = new ConfigProfile();

@@ -14,7 +14,7 @@
     <RootNamespace>bookstore.api</RootNamespace>
     <AssemblyName>bookstore.api</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -152,7 +152,7 @@
       <Project>{200ed2bb-92b2-437b-a6e4-691dd3de900d}</Project>
       <Name>bookstore.sandbox.controllers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\name.types\bookstore.types.csproj">
+    <ProjectReference Include="..\bookstore.types\bookstore.types.csproj">
       <Project>{562f8324-3e17-47f1-956b-ec7d80a011ac}</Project>
       <Name>bookstore.types</Name>
     </ProjectReference>

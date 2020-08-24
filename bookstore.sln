@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.1082
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "production.api", "production.api", "{EF8D3CE9-BAE2-44FD-89A4-4BA992900C28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bookstore.types", "name.types\bookstore.types.csproj", "{562F8324-3E17-47F1-956B-EC7D80A011AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bookstore.types", "bookstore.types\bookstore.types.csproj", "{562F8324-3E17-47F1-956B-EC7D80A011AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bookstore.interfaces", "bookstore.interfaces\bookstore.interfaces.csproj", "{4C48D014-9B15-41B3-A50A-2B4DA4F927FC}"
 EndProject

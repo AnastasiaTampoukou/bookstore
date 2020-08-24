@@ -91,7 +91,7 @@
       <Project>{4C48D014-9B15-41B3-A50A-2B4DA4F927FC}</Project>
       <Name>bookstore.interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\name.types\bookstore.types.csproj">
+    <ProjectReference Include="..\bookstore.types\bookstore.types.csproj">
       <Project>{562f8324-3e17-47f1-956b-ec7d80a011ac}</Project>
       <Name>bookstore.types</Name>
     </ProjectReference>

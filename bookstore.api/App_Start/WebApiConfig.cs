@@ -1,6 +1,6 @@
-﻿using bookstore.api.App_Start;
-using bookstore.implementation;
+﻿using bookstore.implementation;
 using bookstore.interfaces;
+using bookstore.types;
 using bUtility.Logging;
 using bUtility.WebApi;
 using SimpleInjector;
@@ -9,7 +9,6 @@ using System;
 using System.Data;
 using System.Web.Http;
 using System.Web.Http.Filters;
-using static bookstore.types.GeneralTypes;
 
 namespace bookstore.api
 {
