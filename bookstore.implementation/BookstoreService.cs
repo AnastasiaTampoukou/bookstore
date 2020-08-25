@@ -30,8 +30,8 @@ namespace bookstore.implementation
 
         public string TestWithExceptionHandler()
         {
-            return "Hello";
-            //throw new BookstoreException(103,"Hello");
+            //return "Hello";
+            throw new BookstoreException(103, "Hello is a test exception handler");
         }
 
         public string TestDatabaseConnection()

@@ -20,7 +20,7 @@ namespace bookstore.controllers
         {
             _logger = logger;
             _bookstoreService = bookstoreService;
-            _exceptionHandler = new bUtility.ExceptionHandler(logger, ex=>(ex as BookstoreException)?.Code, typeof(BookstoreException) );
+            _exceptionHandler = new ExceptionHandler(logger, ex=>(ex as BookstoreException)?.Code, typeof(BookstoreException) );
         }
 
 
