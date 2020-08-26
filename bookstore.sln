@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1082
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "production.api", "production.api", "{EF8D3CE9-BAE2-44FD-89A4-4BA992900C28}"
 EndProject
@@ -27,7 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bookstore.api", "bookstore.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{859D9A2A-CD0B-4464-B635-81EB1E7401E8}"
 	ProjectSection(SolutionItems) = preProject
-		SqlQuery_1.sql = SqlQuery_1.sql
+		databaseSQL.sql = databaseSQL.sql
+		schema.sql = schema.sql
 	EndProjectSection
 EndProject
 Global
