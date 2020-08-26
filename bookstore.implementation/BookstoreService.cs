@@ -36,9 +36,11 @@ namespace bookstore.implementation
 
         public string TestDatabaseConnection()
         {
-            _DbConnectionProvider.Invoke().Open();
-            _logger.Info($"Successfully opened connection to database: {_DbConnectionProvider.Invoke().Database}. Connection state: {_DbConnectionProvider.Invoke().State}");
-            return $"Successfully opened connection to database: {_DbConnectionProvider.Invoke().Database}. Connection state: {_DbConnectionProvider.Invoke().State}";
+            using (var connection = _DbConnectionProvider.Invoke())
+            {
+                _logger.Info($"Successfully opened connection to database: {_DbConnectionProvider.Invoke().Database}. Connection state: {_DbConnectionProvider.Invoke().State}");
+                return $"Successfully opened connection to database: {_DbConnectionProvider.Invoke().Database}. Connection state: {_DbConnectionProvider.Invoke().State}";
+            }
         }
     }
 }

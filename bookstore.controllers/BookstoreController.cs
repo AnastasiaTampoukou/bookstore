@@ -46,9 +46,9 @@ namespace bookstore.controllers
             return _exceptionHandler.SafeExecutor<string>(()=>_bookstoreService.TestWithExceptionHandler());
         }
         [HttpPost]
-        public string TestDatabaseConnection()
+        public Response<string> TestDatabaseConnection()
         {
-            return _bookstoreService.TestDatabaseConnection();
+            return _exceptionHandler.SafeExecutor(()=> _bookstoreService.TestDatabaseConnection());
         }
         [HttpGet]
         public string GetAllBooks()

@@ -1,6 +1,8 @@
 ﻿using bUtility.WebApi;
 using System;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace bookstore.api
 {
@@ -8,11 +10,13 @@ namespace bookstore.api
     {
         public static ConfigProfile Current { get; set; }
 
-        public readonly Func<IDbConnection> AuditDbConnection = () =>
+        public readonly Func<IDbConnection> DbConnection = () =>
         {
-            var c = new System.Data.SqlClient.SqlConnection(LoadString("auditConnection"));
+            
+            var c = new SqlConnection(LoadString("testConnection"));
             c.Open();
             return c;
+            
         };
 
         public static ConfigProfile LoadConfigurationProfile()

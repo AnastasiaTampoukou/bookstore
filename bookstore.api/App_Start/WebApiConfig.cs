@@ -68,7 +68,7 @@ namespace bookstore.api
 
         public static void RegisterSqlFactories(ConfigProfile cp)
         {
-            Container.RegisterSingleton<DbProvider<IDbConnection>>(() => () => cp.AuditDbConnection());
+            Container.RegisterSingleton<DbProvider<IDbConnection>>(() => () => cp.DbConnection());
         }
         
     }
