@@ -15,13 +15,12 @@ namespace bookstore.implementation
         {
             _DbConnectionProvider = DbConnectionProvider;
             _logger = logger;
-            
         }
 
         public string Test()
         {
             DateTime now = DateTime.Now;
-            return now.ToString("dd/MM/yyyy"); ;
+            return now.ToString("dd/MM/yyyy");
         }
 
         public void TestWithException()
@@ -43,6 +42,14 @@ namespace bookstore.implementation
                 _logger.Info(response.StatusMessage);
                 return response;
             }
+        }
+
+        public GetAllBooksResponse GetAllBooks()
+        {
+            // Step 1: Fetch books from database (datatype: List<Book>)
+            // Step 2: Convert List<Book> to List GetAllBooksResponse
+            // Step 3: Return response
+            throw new NotImplementedException();
         }
     }
 }

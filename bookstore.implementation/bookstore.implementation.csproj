@@ -66,6 +66,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookstoreService.cs" />
+    <Compile Include="db\entities\Book.cs" />
+    <Compile Include="db\extensions\BookMappings.cs" />
+    <Compile Include="db\queries\BookQueries.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

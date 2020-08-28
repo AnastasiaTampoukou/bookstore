@@ -11,5 +11,7 @@ namespace bookstore.interfaces
         string Test();
 
         DatabaseStatus TestDatabaseConnection();
+
+        GetAllBooksResponse GetAllBooks();
     }
 }
