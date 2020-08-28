@@ -40,7 +40,7 @@ namespace bookstore.implementation
             using (var connection = _DbConnectionProvider.Invoke())
             {
                 _logger.Info($"Successfully opened connection to database: {_DbConnectionProvider.Invoke().Database}. Connection state: {_DbConnectionProvider.Invoke().State}");
-                return _databaseStatus.DatabaseSting;
+                return _databaseStatus.DatabaseString(connection);
             }
         }
     }

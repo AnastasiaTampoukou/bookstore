@@ -48,7 +48,7 @@ namespace bookstore.controllers
         [HttpPost]
         public Response<string> TestDatabaseConnection()
         {
-            //Request<DatabaseStatus> request
+            
             return _exceptionHandler.SafeExecutor(()=> _bookstoreService.TestDatabaseConnection());
         }
         [HttpGet]
