@@ -1,12 +1,15 @@
-﻿namespace bookstore.implementation.db.entities
+﻿using System;
+
+namespace bookstore.implementation.db.entities
 {
     internal class Book
     {
-        internal string Id { get; set; }
-        internal string Timestamp { get; set; }
-        internal string Title { get; set; }
-        internal string Summary { get; set; }
-        internal string Description { get; set; }
-        internal string Status { get; set; }
+        public Guid Id { get; set; }
+        public DateTime Timestamp { get; set; }
+        public string Title { get; set; }
+        public string Summary { get; set; }
+        public string Description { get; set; }
+        public string Status { get; set; }
+        public DateTime? StatusTimestamp { get; set; }
     }
 }

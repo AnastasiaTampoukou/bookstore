@@ -1,0 +1,7 @@
+insert into Book values (
+NEWID(), 
+GETDATE(), 
+N'Eragon: Book I', 'A new adventure hatches in the first book of the Inheritance Cycle, perfect for fans of Lord of the Rings! This New York Times bestselling series has sold over 35 million copies and is an international fantasy sensation.',
+N'A new adventure hatches in the first book of the Inheritance Cycle, perfect for fans of Lord of the Rings! This New York Times bestselling series has sold over 35 million copies and is an international fantasy sensation. When fifteen-year-old Eragon finds a polished blue stone in the forest, he thinks it is the lucky discovery of a poor farm boy. But when the stone brings a dragon hatchling, Eragon soon realizes he has stumbled upon a legacy nearly as old as the Empire itself. Overnight his simple life is shattered, and, gifted with only an ancient sword, a loyal dragon, and sage advice from an old storyteller, Eragon is soon swept into a dangerous tapestry of magic, glory, and power. Now his choices could save—or destroy—the Empire. Features interlocking art that reveals an image across the spines of all four books! And don’t miss the most recent book set in Eragon''s world, The Fork, the Witch, and the Worm: Tales from Alagaësia!',
+'Available',
+NULL)
