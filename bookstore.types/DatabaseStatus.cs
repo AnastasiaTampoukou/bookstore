@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
 namespace bookstore.types
 {
+    [DataContract]
     public class DatabaseStatus
     {
-        public string DatabaseString(IDbConnection _DbConnectionProvider)
-        {
-            
-            return $"Successfully opened connection to " +
-                $"database: {_DbConnectionProvider.Database}. Connection state: {_DbConnectionProvider.State}";
-        }
-        
+        [DataMember(Name = "statusMessage")]
+        public string StatusMessage { get; set; }
     }
 }

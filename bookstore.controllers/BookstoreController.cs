@@ -1,11 +1,8 @@
-﻿using bookstore.implementation;
-using bookstore.interfaces;
+﻿using bookstore.interfaces;
+using bookstore.types;
 using bUtility;
 using bUtility.Logging;
-using bUtility.Reflection;
-using bookstore.types;
 using System;
-using System.Security.Principal;
 using System.Web.Http;
 
 namespace bookstore.controllers
@@ -20,9 +17,8 @@ namespace bookstore.controllers
         {
             _logger = logger;
             _bookstoreService = bookstoreService;
-            _exceptionHandler = new ExceptionHandler(logger, ex=>(ex as BookstoreException)?.Code, typeof(BookstoreException) );
+            _exceptionHandler = new ExceptionHandler(logger, ex => (ex as BookstoreException)?.Code, typeof(BookstoreException));
         }
-
 
         [HttpGet]
         public string Test()
@@ -30,31 +26,36 @@ namespace bookstore.controllers
             _logger.Info($"Test endpoint called on : {_bookstoreService.Test()}");
             return "Hello from Bookstore API";
         }
+
         [HttpGet]
         public void TestWithException()
         {
-            try {
+            try
+            {
                 _bookstoreService.TestWithException();
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 _logger.Error(e.Message);
                 throw;
             }
         }
+
         [HttpGet]
         public Response<string> TestWithExceptionHandler()
         {
-            return _exceptionHandler.SafeExecutor<string>(()=>_bookstoreService.TestWithExceptionHandler());
+            return _exceptionHandler.SafeExecutor<string>(() => _bookstoreService.TestWithExceptionHandler());
         }
+
         [HttpPost]
-        public Response<string> TestDatabaseConnection()
+        public Response<DatabaseStatus> TestDatabaseConnection()
         {
-            
-            return _exceptionHandler.SafeExecutor(()=> _bookstoreService.TestDatabaseConnection());
+            return _exceptionHandler.SafeExecutor(() => _bookstoreService.TestDatabaseConnection());
         }
+
         [HttpGet]
         public string GetAllBooks()
         {
-            
             return "Hello ";
         }
     }

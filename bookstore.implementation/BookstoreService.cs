@@ -10,7 +10,6 @@ namespace bookstore.implementation
     {
         private readonly DbProvider<IDbConnection> _DbConnectionProvider;
         private readonly ILogger _logger;
-        public static DatabaseStatus _databaseStatus=new DatabaseStatus();
 
         public BookstoreService(DbProvider<IDbConnection> DbConnectionProvider, ILogger logger)
         {
@@ -35,12 +34,14 @@ namespace bookstore.implementation
             throw new BookstoreException(103, "Hello is a test exception handler");
         }
 
-        public string TestDatabaseConnection()
+        public DatabaseStatus TestDatabaseConnection()
         {
             using (var connection = _DbConnectionProvider.Invoke())
             {
-                _logger.Info($"Successfully opened connection to database: {_DbConnectionProvider.Invoke().Database}. Connection state: {_DbConnectionProvider.Invoke().State}");
-                return _databaseStatus.DatabaseString(connection);
+                var response = new DatabaseStatus();
+                response.StatusMessage = $"Successfully opened connection to database: {_DbConnectionProvider.Invoke().Database}. Connection state: {_DbConnectionProvider.Invoke().State}";
+                _logger.Info(response.StatusMessage);
+                return response;
             }
         }
     }
