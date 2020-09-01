@@ -53,10 +53,10 @@ namespace bookstore.controllers
             return _exceptionHandler.SafeExecutor(() => _bookstoreService.TestDatabaseConnection());
         }
 
-        [HttpGet]
-        public string GetAllBooks()
+        [HttpPost]
+        public Response<GetAllBooksResponse> GetAllBooks()
         {
-            return "Hello ";
+            return _exceptionHandler.SafeExecutor(() => _bookstoreService.GetAllBooks());
         }
     }
 }

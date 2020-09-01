@@ -1,8 +1,13 @@
-﻿using bookstore.interfaces;
+﻿using bookstore.implementation.db.entities;
+using bookstore.implementation.db.extensions;
+using bookstore.implementation.db.queries;
+using bookstore.interfaces;
 using bookstore.types;
 using bUtility.Logging;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace bookstore.implementation
 {
@@ -35,7 +40,7 @@ namespace bookstore.implementation
 
         public DatabaseStatus TestDatabaseConnection()
         {
-            using (var connection = _DbConnectionProvider.Invoke())
+            
             {
                 var response = new DatabaseStatus();
                 response.StatusMessage = $"Successfully opened connection to database: {_DbConnectionProvider.Invoke().Database}. Connection state: {_DbConnectionProvider.Invoke().State}";
@@ -49,7 +54,15 @@ namespace bookstore.implementation
             // Step 1: Fetch books from database (datatype: List<Book>)
             // Step 2: Convert List<Book> to List GetAllBooksResponse
             // Step 3: Return response
-            throw new NotImplementedException();
+            using (var connection = _DbConnectionProvider.Invoke())
+            {
+                var books = connection.GetBooks().ToList();
+                var booksShortDetailsList = books.ToShortDetailsList();
+                //GetAllBooksResponse response = books.ToShortDetailsList();
+                return new GetAllBooksResponse { Books = booksShortDetailsList };
+            }
+
+
         }
     }
 }
