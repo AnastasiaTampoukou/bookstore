@@ -1,11 +1,9 @@
-﻿using bookstore.implementation.db.entities;
-using bookstore.implementation.db.extensions;
+﻿using bookstore.implementation.db.extensions;
 using bookstore.implementation.db.queries;
 using bookstore.interfaces;
 using bookstore.types;
 using bUtility.Logging;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
@@ -40,7 +38,6 @@ namespace bookstore.implementation
 
         public DatabaseStatus TestDatabaseConnection()
         {
-            
             {
                 var response = new DatabaseStatus();
                 response.StatusMessage = $"Successfully opened connection to database: {_DbConnectionProvider.Invoke().Database}. Connection state: {_DbConnectionProvider.Invoke().State}";
@@ -54,27 +51,24 @@ namespace bookstore.implementation
             // Step 1: Fetch books from database (datatype: List<Book>)
             // Step 2: Convert List<Book> to List GetAllBooksResponse
             // Step 3: Return response
-            using (var connection = _DbConnectionProvider.Invoke())
+            using (var connection = _DbConnectionProvider.SafelyInvoke(_logger))
             {
                 var books = connection.GetBooks().ToList();
                 var booksShortDetailsList = books.ToShortDetailsList();
-                //GetAllBooksResponse response = books.ToShortDetailsList();
                 return new GetAllBooksResponse { Books = booksShortDetailsList };
             }
-
-
         }
 
         public GetBookDetailsResponse GetBookDetails(GetBookDetailsRequest request)
         {
-            using (var connection = _DbConnectionProvider.Invoke())
+            request.Validate();
+            using (var connection = _DbConnectionProvider.SafelyInvoke(_logger))
             {
                 var book = connection.GetBookById(request.BookId);
+                if (book == null) throw BookstoreException.BookNotFound;
                 var booksDetails = book.ToDetailsModel();
-                return new GetBookDetailsResponse { BookDetails = booksDetails};
+                return new GetBookDetailsResponse { BookDetails = booksDetails };
             }
-
-
         }
     }
 }

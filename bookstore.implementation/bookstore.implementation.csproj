@@ -78,6 +78,8 @@
     <Compile Include="db\entities\Book.cs" />
     <Compile Include="db\extensions\BookMappings.cs" />
     <Compile Include="db\queries\BookQueries.cs" />
+    <Compile Include="Extensions.RequestValidations.cs" />
+    <Compile Include="Extensions.DbConnectionProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
