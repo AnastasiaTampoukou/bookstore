@@ -26,10 +26,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bookstore.api", "bookstore.api\bookstore.api.csproj", "{6E216FA1-AC70-499A-AE55-3CB1C81A033C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{859D9A2A-CD0B-4464-B635-81EB1E7401E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{0F75B7E9-7C08-49A4-BB29-0DF758C8990C}"
 	ProjectSection(SolutionItems) = preProject
-		databaseSQL.sql = databaseSQL.sql
-		initialData.sql = initialData.sql
-		schema.sql = schema.sql
+		Solution Items\Database\create_database.sql = Solution Items\Database\create_database.sql
+		Solution Items\Database\create_db_schema.sql = Solution Items\Database\create_db_schema.sql
+		Solution Items\Database\initialize_db_data.sql = Solution Items\Database\initialize_db_data.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Postman", "Postman", "{EDF2F09E-EC98-485D-AA75-BB4A8A4942E8}"
+	ProjectSection(SolutionItems) = preProject
+		Solution Items\Postman\bookstore.postman_collection.json = Solution Items\Postman\bookstore.postman_collection.json
+		Solution Items\Postman\DEV_BOOKSTORE.postman_environment.json = Solution Items\Postman\DEV_BOOKSTORE.postman_environment.json
 	EndProjectSection
 EndProject
 Global
@@ -101,6 +109,8 @@ Global
 		{200ED2BB-92B2-437B-A6E4-691DD3DE900D} = {02648DF2-D7D3-4B58-A23C-7964AC621F54}
 		{826FA75E-2844-47CA-BE3D-08DAEB82FF03} = {02648DF2-D7D3-4B58-A23C-7964AC621F54}
 		{5D1C90EA-669B-4975-A822-3682186FA62E} = {02648DF2-D7D3-4B58-A23C-7964AC621F54}
+		{0F75B7E9-7C08-49A4-BB29-0DF758C8990C} = {859D9A2A-CD0B-4464-B635-81EB1E7401E8}
+		{EDF2F09E-EC98-485D-AA75-BB4A8A4942E8} = {859D9A2A-CD0B-4464-B635-81EB1E7401E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {88849562-815E-4DF1-A4C1-2E0C8F7D11C8}

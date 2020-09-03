@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "b7b32208-1b31-4563-b7b0-1b2e28a90b18",
+		"name": "Bookstore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hello API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Endpoint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/bookstore/test",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bookstore",
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test with exception",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/bookstore/testwithexception",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bookstore",
+						"testwithexception"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test Database Connection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/bookstore/TestDatabaseConnection",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bookstore",
+						"TestDatabaseConnection"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/api/bookstore/GetAllBooks",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bookstore",
+						"GetAllBooks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books Details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"header\": {\r\n        \"ID\": \"{{$guid}}\",\r\n        \"application\": \"{{application_guid}}\"\r\n    },\r\n    \"payload\": {\r\n        \"bookId\": \"5199d324-0fbc-44c6-98eb-d67ccc2d9751\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bookstore/GetBookDetails",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bookstore",
+						"GetBookDetails"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
