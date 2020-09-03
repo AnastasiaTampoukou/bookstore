@@ -58,5 +58,11 @@ namespace bookstore.controllers
         {
             return _exceptionHandler.SafeExecutor(() => _bookstoreService.GetAllBooks());
         }
+
+        [HttpPost]
+        public Response<GetBookDetailsResponse> GetBookDetails([FromBody] GetBookDetailsRequest request)
+        {
+            return _exceptionHandler.SafeExecutor(() => _bookstoreService.GetBookDetails(request));
+        }
     }
 }

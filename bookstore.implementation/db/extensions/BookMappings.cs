@@ -15,12 +15,12 @@ namespace bookstore.implementation.db.extensions
         {
             // TODO: Convert database type Book to model type BookShortDetails
 
-           /* string dateString = string.Empty;
-            if (book.StatusTimestamp != null)
-            {
-                dateString = book.StatusTimestamp.ToString();
-            }*/
-            
+            /* string dateString = string.Empty;
+             if (book.StatusTimestamp != null)
+             {
+                 dateString = book.StatusTimestamp.ToString();
+             }*/
+
             return new BookShortDetails
             {
                 Name = book.Title,
@@ -30,8 +30,6 @@ namespace bookstore.implementation.db.extensions
                 Status = book.Status
 
             };
-            
-            
 
         }
 
@@ -39,5 +37,25 @@ namespace bookstore.implementation.db.extensions
         {
             return books?.ToList().ConvertAll(ToShortDetailsModel);
         }
+
+        internal static BookDetails ToDetailsModel(this Book book)
+        {
+            return new BookDetails
+            {
+                Name = book.Title,
+                BookId = book.Id.ToString(),
+                Description = book.Description,
+                ShortDescription = book.Summary,
+                StatusTimestamp = book.StatusTimestamp?.ToString(),
+                Status = book.Status
+
+            };
+
+        }
+        internal static List<BookDetails> ToDetailsList(this IEnumerable<Book> book)
+        {
+            return book?.ToList().ConvertAll(ToDetailsModel);
+        }
+
     }
 }

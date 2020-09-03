@@ -64,5 +64,17 @@ namespace bookstore.implementation
 
 
         }
+
+        public GetBookDetailsResponse GetBookDetails(GetBookDetailsRequest request)
+        {
+            using (var connection = _DbConnectionProvider.Invoke())
+            {
+                var book = connection.GetBookById(request.BookId);
+                var booksDetails = book.ToDetailsModel();
+                return new GetBookDetailsResponse { BookDetails = booksDetails};
+            }
+
+
+        }
     }
 }
