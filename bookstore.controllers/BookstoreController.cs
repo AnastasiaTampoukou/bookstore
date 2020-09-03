@@ -1,7 +1,7 @@
 ﻿using bookstore.interfaces;
 using bookstore.types;
-using bUtility;
 using bUtility.Logging;
+using ibank.Hosting.WebApi;
 using System;
 using System.Web.Http;
 
@@ -17,7 +17,7 @@ namespace bookstore.controllers
         {
             _logger = logger;
             _bookstoreService = bookstoreService;
-            _exceptionHandler = new ExceptionHandler(logger, ex => (ex as BookstoreException)?.Code, typeof(BookstoreException));
+            _exceptionHandler = new bUtility.ExceptionHandler(logger, ex => (ex as BookstoreException)?.CodeWithPrefix, typeof(BookstoreException));
         }
 
         [HttpGet]
@@ -60,9 +60,9 @@ namespace bookstore.controllers
         }
 
         [HttpPost]
-        public Response<GetBookDetailsResponse> GetBookDetails([FromBody] GetBookDetailsRequest request)
+        public Response<GetBookDetailsResponse> GetBookDetails(Request<GetBookDetailsRequest> request)
         {
-            return _exceptionHandler.SafeExecutor(() => _bookstoreService.GetBookDetails(request));
+            return _exceptionHandler.SafeExecutor(() => _bookstoreService.GetBookDetails(request?.Payload));
         }
     }
 }
