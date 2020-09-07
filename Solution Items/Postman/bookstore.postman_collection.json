@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b7b32208-1b31-4563-b7b0-1b2e28a90b18",
+		"_postman_id": "eefa651d-4aa9-4ccc-ba2c-610060bae3f0",
 		"name": "Bookstore",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -102,7 +102,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"header\": {\r\n        \"ID\": \"{{$guid}}\",\r\n        \"application\": \"{{application_guid}}\"\r\n    },\r\n    \"payload\": {\r\n        \"bookId\": \"5199d324-0fbc-44c6-98eb-d67ccc2d9751\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"header\": {\r\n        \"ID\": \"{{$guid}}\",\r\n        \"application\": \"{{application_guid}}\"\r\n    },\r\n    \"payload\": {\r\n        \"bookId\": \"abd51688-4e2c-4ea2-8f9d-b0ad52724a0a\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -118,6 +118,90 @@
 						"api",
 						"bookstore",
 						"GetBookDetails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"header\": {\r\n        \"ID\": \"{{$guid}}\",\r\n        \"application\": \"{{application_guid}}\"\r\n    },\r\n    \"payload\": {\r\n        \"name\": \"Inheritance: Book IV (The Inheritance Cycle)\",\r\n        \"description\": \"The Varden attack Belatona, a city of the Empire. In the battle, Saphira, Eragon's dragon, is nearly killed by a Dauthdaert, a spear from the Dragon Wars that can bypass magical wards and kill dragons. Belatona is captured by the Varden, and an alliance is later formed between the Varden and the werecats.\",\r\n        \"summary\": \"Not so very long ago, Eragon — Shadeslayer, Dragon Rider — was nothing more than a poor farm boy, and his dragon, Saphira, only a blue stone in the forest. Now the fate of an entire civilization rests on their shoulders.\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bookstore/StoreBook",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bookstore",
+						"StoreBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"header\": {\r\n        \"ID\": \"{{$guid}}\",\r\n        \"application\": \"{{application_guid}}\"\r\n    },\r\n    \"payload\": {\r\n        \"bookId\": \"27a3b460-1247-489d-8e67-8b00e013c576\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bookstore/RemoveBook",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bookstore",
+						"RemoveBook"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"header\": {\r\n        \"ID\": \"{{$guid}}\",\r\n        \"application\": \"{{application_guid}}\"\r\n    },\r\n    \"payload\": {\r\n        \"bookId\": \"0e7a7100-951f-4997-b9ce-bdf7bf8c2556\",\r\n        \"name\": \"Inheritance: Book IV (The Inheritance Cycle)\",\r\n        \"description\": \"The Varden attack Belatona, a city of the Empire. In the battle, Saphira, Eragon's dragon, is nearly killed by a Dauthdaert, a spear from the Dragon Wars that can bypass magical wards and kill dragons. Belatona is captured by the Varden, and an alliance is later formed between the Varden and the werecats.\",\r\n        \"summary\": \"Not so very long ago, Eragon — Shadeslayer, Dragon Rider — was nothing more than a poor farm boy, and his dragon, Saphira, only a blue stone in the forest. Now the fate of an entire civilization rests on their shoulders.\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bookstore/UpdateBook",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bookstore",
+						"UpdateBook"
 					]
 				}
 			},
