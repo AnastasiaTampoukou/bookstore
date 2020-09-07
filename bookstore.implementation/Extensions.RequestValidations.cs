@@ -10,5 +10,11 @@ namespace bookstore.implementation
             if (request == null) throw BookstoreException.InvalidJsonData;
             if (!Guid.TryParse(request.BookId, out Guid bookIdAsGuid)) throw BookstoreException.InvalidBookId;
         }
+
+        internal static void Validate(this StoreBookRequest request)
+        {
+            if (request == null) throw BookstoreException.InvalidJsonData;
+            //if ((request.Description == null || request.Name == null || request.Summary == null)) throw BookstoreException.InvalidData;
+        }
     }
 }

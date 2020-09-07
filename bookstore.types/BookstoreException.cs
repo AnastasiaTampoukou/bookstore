@@ -20,6 +20,7 @@ namespace bookstore.types
 
         public static readonly BookstoreException UnrecognizedError = new BookstoreException(1001, "An unknown error occurred. Please contact  the developer or try again later");
         public static readonly BookstoreException DatabaseConnectionError = new BookstoreException(1002, "Could not connect to database");
+        public static readonly BookstoreException NotBookStored = new BookstoreException(1003, "The book didn't store at database");
 
         #endregion Technical Exceptions (1001 - 1999)
 

@@ -70,5 +70,17 @@ namespace bookstore.implementation
                 return new GetBookDetailsResponse { BookDetails = booksDetails };
             }
         }
+
+        public StoreBookResponse StoreBook(StoreBookRequest request)
+        {
+            request.Validate();
+            using (var connection = _DbConnectionProvider.SafelyInvoke(_logger))
+            {
+                var book = connection.StoreBook(request);
+                var booksDetails = book.ToDetailsModel();
+                return new StoreBookResponse { BookDetails = booksDetails };
+            }
+
+            }
     }
 }
