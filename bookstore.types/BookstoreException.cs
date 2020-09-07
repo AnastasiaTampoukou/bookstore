@@ -22,6 +22,7 @@ namespace bookstore.types
         public static readonly BookstoreException DatabaseConnectionError = new BookstoreException(1002, "Could not connect to database");
         public static readonly BookstoreException NotBookStored = new BookstoreException(1003, "The book didn't store at database");
         public static readonly BookstoreException NotBookDeleted = new BookstoreException(1004, "The book can't deleted from database or doesn't exist at database");
+        public static readonly BookstoreException NotBookUpdated = new BookstoreException(1005, "The book didn't update at database");
 
         #endregion Technical Exceptions (1001 - 1999)
 

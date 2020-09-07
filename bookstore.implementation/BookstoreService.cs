@@ -93,5 +93,18 @@ namespace bookstore.implementation
                 else return new RemoveBookResponse { Success = false};
             }
         }
+
+        public UpdateBookDetailsResponse UpdateBook(UpdateBookDetailsRequest request)
+        {
+            request.Validate();
+            using (var connection = _DbConnectionProvider.SafelyInvoke(_logger))
+            {
+                var book = connection.UpdateBook(request);
+                if (book == null) throw BookstoreException.BookNotFound;
+                var booksDetails = book.ToDetailsModel();
+                return new UpdateBookDetailsResponse { BookDetails = booksDetails };
+            }
+
+        }
     }
 }

@@ -82,6 +82,8 @@
     <Compile Include="RemoveBookResponse.cs" />
     <Compile Include="StoreBookRequest.cs" />
     <Compile Include="StoreBookResponse.cs" />
+    <Compile Include="UpdateBookDetailsRequest.cs" />
+    <Compile Include="UpdateBookDetailsResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
