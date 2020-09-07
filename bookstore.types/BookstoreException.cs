@@ -21,6 +21,7 @@ namespace bookstore.types
         public static readonly BookstoreException UnrecognizedError = new BookstoreException(1001, "An unknown error occurred. Please contact  the developer or try again later");
         public static readonly BookstoreException DatabaseConnectionError = new BookstoreException(1002, "Could not connect to database");
         public static readonly BookstoreException NotBookStored = new BookstoreException(1003, "The book didn't store at database");
+        public static readonly BookstoreException NotBookDeleted = new BookstoreException(1004, "The book can't deleted from database or doesn't exist at database");
 
         #endregion Technical Exceptions (1001 - 1999)
 
@@ -32,7 +33,7 @@ namespace bookstore.types
         public static readonly BookstoreException SummaryNotNull = new BookstoreException(2004, "Book must have a summary");
         public static readonly BookstoreException InvalidName = new BookstoreException(2005, "Invalid book name");
         public static readonly BookstoreException InvalidDescription = new BookstoreException(2006, "Description must have at least 1000 characters");
-        public static readonly BookstoreException DescriptionNotNull = new BookstoreException(2007, "Book must have a descriptions");
+        public static readonly BookstoreException DescriptionNotNull = new BookstoreException(2007, "Book must have a description");
         public static readonly BookstoreException InvalidSummary = new BookstoreException(2008, "Invalid book summary");
 
         #endregion Validation Exceptions (2001 - 2999)

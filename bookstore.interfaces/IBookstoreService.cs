@@ -17,5 +17,7 @@ namespace bookstore.interfaces
         GetBookDetailsResponse GetBookDetails(GetBookDetailsRequest request);
 
         StoreBookResponse StoreBook(StoreBookRequest request);
+
+        RemoveBookResponse RemoveBook(RemoveBookRequest request);
     }
 }

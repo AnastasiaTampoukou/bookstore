@@ -78,6 +78,8 @@
     <Compile Include="GetBookDetailsResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BookstoreException.cs" />
+    <Compile Include="RemoveBookRequest.cs" />
+    <Compile Include="RemoveBookResponse.cs" />
     <Compile Include="StoreBookRequest.cs" />
     <Compile Include="StoreBookResponse.cs" />
   </ItemGroup>

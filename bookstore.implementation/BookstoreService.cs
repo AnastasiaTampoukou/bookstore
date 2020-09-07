@@ -81,6 +81,17 @@ namespace bookstore.implementation
                 return new StoreBookResponse { BookDetails = booksDetails };
             }
 
+        }
+
+        public RemoveBookResponse RemoveBook(RemoveBookRequest request)
+        {
+            request.Validate();
+            using (var connection = _DbConnectionProvider.SafelyInvoke(_logger))
+            {
+                var bookDeleted = connection.RemoveBook(request);
+                if(bookDeleted > 0)  return new RemoveBookResponse{ Success = true }; 
+                else return new RemoveBookResponse { Success = false};
             }
+        }
     }
 }

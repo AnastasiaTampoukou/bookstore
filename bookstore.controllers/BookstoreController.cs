@@ -70,5 +70,11 @@ namespace bookstore.controllers
         {
             return _exceptionHandler.SafeExecutor(() => _bookstoreService.StoreBook(request?.Payload));
         }
+
+        [HttpPost]
+        public Response<RemoveBookResponse> RemoveBook(Request<RemoveBookRequest> request)
+        {
+            return _exceptionHandler.SafeExecutor(() => _bookstoreService.RemoveBook(request?.Payload));
+        }
     }
 }

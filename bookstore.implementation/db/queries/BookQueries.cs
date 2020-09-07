@@ -42,5 +42,16 @@ namespace bookstore.implementation.db.queries
             }
             else throw BookstoreException.NotBookStored;
         }
+
+        internal static int RemoveBook(this IDbConnection con, RemoveBookRequest request)
+        {
+            var deleteBook = con.Execute("DELETE FROM [dbo].[Book] WHERE Id = @Id",new { Id = request.BookId});
+            if (deleteBook > 0)
+            {
+                return deleteBook;
+            }
+            else throw BookstoreException.NotBookDeleted;
+            
+        }
     }
 }
