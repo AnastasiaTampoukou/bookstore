@@ -13,16 +13,15 @@ namespace bookstore.implementation.db.queries
     {
         internal static IEnumerable<Book> GetBooks(this IDbConnection con)
         {
-            // TODO: Fetch Books from database
             return con.Select<Book>();
         }
+
         internal static Book GetBookById(this IDbConnection con, string bookId)
         {
             Guid newBookId = Guid.Parse(bookId);
             return con.Select<Book>(new { Id = newBookId }).SingleOrDefault();
         }
 
-        public static readonly string InsertBookPart = typeof(StoreBookRequest).GetUpdateClause();
         internal static Book StoreBook(this IDbConnection con, StoreBookRequest request)
         {
             var newBook = new Book
@@ -42,7 +41,6 @@ namespace bookstore.implementation.db.queries
                 return newBook;
             }
             else throw BookstoreException.NotBookStored;
-
         }
     }
 }

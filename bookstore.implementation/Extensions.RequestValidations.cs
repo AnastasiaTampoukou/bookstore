@@ -1,6 +1,5 @@
 ﻿using bookstore.types;
 using System;
-using System.Linq;
 
 namespace bookstore.implementation
 {
@@ -15,12 +14,12 @@ namespace bookstore.implementation
         internal static void Validate(this StoreBookRequest request)
         {
             if (request == null) throw BookstoreException.InvalidJsonData;
-            if (request.Name == null) throw BookstoreException.NameNotNull;
-            if (request.Description == null) throw BookstoreException.DescriptionNotNull;
-            if (request.Summary == null) throw BookstoreException.SummaryNotNull;
-            if (request.Name.Count() > 100) throw BookstoreException.InvalidName;
-            if (request.Description.Count() > 1000)  throw BookstoreException.InvalidDescription;
-            if (request.Summary.Count() > 250) throw BookstoreException.InvalidSummary;
+            if (string.IsNullOrEmpty(request.Name)) throw BookstoreException.NameNotNull;
+            if (string.IsNullOrEmpty(request.Description)) throw BookstoreException.DescriptionNotNull;
+            if (string.IsNullOrEmpty(request.Summary)) throw BookstoreException.SummaryNotNull;
+            if (request.Name.Length > 100) throw BookstoreException.InvalidName;
+            if (request.Description.Length > 1000)  throw BookstoreException.InvalidDescription;
+            if (request.Summary.Length > 250) throw BookstoreException.InvalidSummary;
         }
     }
 }
