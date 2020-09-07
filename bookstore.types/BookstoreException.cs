@@ -28,6 +28,12 @@ namespace bookstore.types
 
         public static readonly BookstoreException InvalidJsonData = new BookstoreException(2001, "Invalid JSON data");
         public static readonly BookstoreException InvalidBookId = new BookstoreException(2002, "BookId must be a valid GUID");
+        public static readonly BookstoreException NameNotNull = new BookstoreException(2003, "Book must have a name");
+        public static readonly BookstoreException SummaryNotNull = new BookstoreException(2004, "Book must have a summary");
+        public static readonly BookstoreException InvalidName = new BookstoreException(2005, "Invalid book name");
+        public static readonly BookstoreException InvalidDescription = new BookstoreException(2006, "Description must have at least 1000 characters");
+        public static readonly BookstoreException DescriptionNotNull = new BookstoreException(2007, "Book must have a descriptions");
+        public static readonly BookstoreException InvalidSummary = new BookstoreException(2008, "Invalid book summary");
 
         #endregion Validation Exceptions (2001 - 2999)
 
