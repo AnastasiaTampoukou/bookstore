@@ -65,5 +65,17 @@ namespace bookstore.implementation.db.queries
             }
             else throw BookstoreException.NotBookUpdated;
         }
+
+        internal static Book UpdateBook(this IDbConnection con, string id)
+        {
+            var newUpdate = con.Execute("UPDATE [dbo].[Book] SET [Status] = @Status, [StatusTimestamp] =  @StatusTimestamp WHERE Id = @Id",
+                new { Id = id, Status = "Borrowed", StatusTimestamp = DateTime.Now });
+            if (newUpdate > 0)
+            {
+                Guid updatedBookId = Guid.Parse(id);
+                return con.Select<Book>(new { Id = updatedBookId }).SingleOrDefault(); ;
+            }
+            else throw BookstoreException.NotBookUpdated;
+        }
     }
 }

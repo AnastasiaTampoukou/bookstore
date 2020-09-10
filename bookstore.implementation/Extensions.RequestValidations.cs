@@ -39,5 +39,11 @@ namespace bookstore.implementation
             if (request.Description.Length > 1000) throw BookstoreException.InvalidDescription;
             if (request.Summary.Length > 250) throw BookstoreException.InvalidSummary;
         }
-    }
+
+        internal static void Validate(this BorrowBookRequest request)
+        {
+            if (request == null) throw BookstoreException.InvalidJsonData;
+            if (!Guid.TryParse(request.BookId, out Guid bookIdAsGuid)) throw BookstoreException.InvalidBookId;
+        }
+        }
 }

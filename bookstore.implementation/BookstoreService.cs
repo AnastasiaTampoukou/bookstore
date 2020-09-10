@@ -106,5 +106,25 @@ namespace bookstore.implementation
             }
 
         }
+
+        public BorrowBookResponse BorrowBook(BorrowBookRequest request)
+        {
+            request.Validate();
+            using (var connection = _DbConnectionProvider.SafelyInvoke(_logger))
+            {
+                var book = connection.GetBookById(request.BookId);
+                if (book == null) throw BookstoreException.BookNotFound;
+                if (book.Status.Equals("Unvailable")) throw BookstoreException.BookIsUnvailable;
+                if (book.Status.Equals("Borrowed")) throw BookstoreException.BookIsBorrowed;
+
+                var newBook = connection.UpdateBook(request.BookId);
+                var updatedBooksDetails = newBook.ToDetailsModel();
+                return new BorrowBookResponse
+                {
+                    BookDetails = updatedBooksDetails
+                };
+
+            }
+        }
     }
 }

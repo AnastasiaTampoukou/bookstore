@@ -206,6 +206,34 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Borrow Book Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"header\": {\r\n        \"ID\": \"{{$guid}}\",\r\n        \"application\": \"{{application_guid}}\"\r\n    },\r\n    \"payload\": {\r\n        \"bookId\": \"0e7a7100-951f-4997-b9ce-bdf7bf8c2556\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bookstore/BorrowBook",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bookstore",
+						"BorrowBook"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}

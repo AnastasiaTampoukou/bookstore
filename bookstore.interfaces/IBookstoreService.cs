@@ -21,5 +21,7 @@ namespace bookstore.interfaces
         RemoveBookResponse RemoveBook(RemoveBookRequest request);
 
         UpdateBookDetailsResponse UpdateBook(UpdateBookDetailsRequest request);
+
+        BorrowBookResponse BorrowBook(BorrowBookRequest request);
     }
 }

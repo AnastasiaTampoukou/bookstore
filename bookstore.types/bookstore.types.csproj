@@ -71,6 +71,8 @@
   <ItemGroup>
     <Compile Include="BookDetails.cs" />
     <Compile Include="BookShortDetails.cs" />
+    <Compile Include="BorrowBookRequest.cs" />
+    <Compile Include="BorrowBookResponse.cs" />
     <Compile Include="DatabaseStatus.cs" />
     <Compile Include="GeneralTypes.cs" />
     <Compile Include="GetAllBooksResponse.cs" />
