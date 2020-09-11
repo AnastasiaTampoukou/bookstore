@@ -82,6 +82,8 @@
     <Compile Include="BookstoreException.cs" />
     <Compile Include="RemoveBookRequest.cs" />
     <Compile Include="RemoveBookResponse.cs" />
+    <Compile Include="ReturnBookRequest.cs" />
+    <Compile Include="ReturnBookResponse.cs" />
     <Compile Include="StoreBookRequest.cs" />
     <Compile Include="StoreBookResponse.cs" />
     <Compile Include="UpdateBookDetailsRequest.cs" />

@@ -23,5 +23,7 @@ namespace bookstore.interfaces
         UpdateBookDetailsResponse UpdateBook(UpdateBookDetailsRequest request);
 
         BorrowBookResponse BorrowBook(BorrowBookRequest request);
+
+        ReturnBookResponse ReturnBook(ReturnBookRequest request);
     }
 }

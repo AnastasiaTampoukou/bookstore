@@ -88,5 +88,11 @@ namespace bookstore.controllers
         {
             return _exceptionHandler.SafeExecutor(() => _bookstoreService.BorrowBook(request?.Payload));
         }
+
+        [HttpPost]
+        public Response<ReturnBookResponse> ReturnBook(Request<ReturnBookRequest> request)
+        {
+            return _exceptionHandler.SafeExecutor(() => _bookstoreService.ReturnBook(request?.Payload));
+        }
     }
 }

@@ -234,6 +234,34 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Return Book Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"header\": {\r\n        \"ID\": \"{{$guid}}\",\r\n        \"application\": \"{{application_guid}}\"\r\n    },\r\n    \"payload\": {\r\n        \"bookId\": \"abd51688-4e2c-4ea2-8f9d-b0ad52724a0a\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bookstore/ReturnBook",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bookstore",
+						"ReturnBook"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
