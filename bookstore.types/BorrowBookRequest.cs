@@ -8,7 +8,5 @@ namespace bookstore.types
         [DataMember(Name = "bookId")]
         public string BookId { get; set; }
 
-        [DataMember(Name = "status")]
-        public string Status = "Borrowed";
     }
 }

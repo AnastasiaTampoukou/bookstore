@@ -43,7 +43,7 @@ namespace bookstore.types
 
         public static readonly BookstoreException BookNotFound = new BookstoreException(3001, "Book not found");
         public static readonly BookstoreException BookIsBorrowed = new BookstoreException(3002, "Book has been already borrowed");
-        public static readonly BookstoreException BookIsUnvailable = new BookstoreException(3003, "Book is Unavailable");
+        public static readonly BookstoreException BookIsUnvailable = new BookstoreException(3003, "Book is Unvailable");
         public static readonly BookstoreException BookIsAvailable = new BookstoreException(3004, "Book has been already return");
 
         #endregion Db Entity Exceptions (3001-3999)
