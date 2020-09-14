@@ -117,7 +117,7 @@ namespace bookstore.implementation
                 if (book.Status.Equals("Unvailable")) throw BookstoreException.BookIsUnvailable;
                 if (book.Status.Equals("Borrowed")) throw BookstoreException.BookIsBorrowed;
 
-                var newBook = connection.BorrowBook(request.BookId);
+                var newBook = connection.UpdateBook(request.BookId, request.Status);
                 var updatedBooksDetails = newBook.ToDetailsModel();
                 return new BorrowBookResponse
                 {
@@ -136,7 +136,7 @@ namespace bookstore.implementation
                 if (book.Status.Equals("Unvailable")) throw BookstoreException.BookIsUnvailable;
                 if (book.Status.Equals("Available")) throw BookstoreException.BookIsAvailable;
 
-                var newBook = connection.ReturnBook(request.BookId);
+                var newBook = connection.UpdateBook(request.BookId, request.Status);
                 var updatedBooksDetails = newBook.ToDetailsModel();
                 return new ReturnBookResponse
                 {

@@ -7,5 +7,6 @@ namespace bookstore.types
     {
         [DataMember(Name = "bookDetails")]
         public BookDetails BookDetails { get; set; }
+
     }
 }
