@@ -58,17 +58,17 @@
     <Reference Include="bUtility.WebApi, Version=1.0.0.20, Culture=neutral, PublicKeyToken=e2a60ca179fe72cb, processorArchitecture=MSIL">
       <HintPath>..\packages\bUtility.WebApi.1.0.0.20\lib\net461\bUtility.WebApi.dll</HintPath>
     </Reference>
-    <Reference Include="Dapper.StrongName, Version=1.50.0.0, Culture=neutral, PublicKeyToken=e3e8412083d25dd3, processorArchitecture=MSIL">
-      <HintPath>..\packages\Dapper.StrongName.1.50.0\lib\net451\Dapper.StrongName.dll</HintPath>
+    <Reference Include="Dapper.StrongName, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e3e8412083d25dd3, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.StrongName.2.0.35\lib\net461\Dapper.StrongName.dll</HintPath>
     </Reference>
     <Reference Include="ibank.Hosting.WebApi, Version=0.0.0.19, Culture=neutral, PublicKeyToken=27dfa4202bdaf1e2, processorArchitecture=MSIL">
       <HintPath>..\packages\ibank.Hosting.WebApi.0.0.0.19\lib\net45\ibank.Hosting.WebApi.dll</HintPath>
     </Reference>
-    <Reference Include="ibank.Identity, Version=0.0.0.8, Culture=neutral, PublicKeyToken=27dfa4202bdaf1e2, processorArchitecture=MSIL">
-      <HintPath>..\packages\ibank.Identity.0.0.0.8\lib\net45\ibank.Identity.dll</HintPath>
+    <Reference Include="ibank.Identity, Version=0.0.0.11, Culture=neutral, PublicKeyToken=27dfa4202bdaf1e2, processorArchitecture=MSIL">
+      <HintPath>..\packages\ibank.Identity.0.0.0.11\lib\net45\ibank.Identity.dll</HintPath>
     </Reference>
-    <Reference Include="ibank.Types.Base, Version=0.0.0.11, Culture=neutral, PublicKeyToken=27dfa4202bdaf1e2, processorArchitecture=MSIL">
-      <HintPath>..\packages\ibank.Types.Base.0.0.0.11\lib\net40\ibank.Types.Base.dll</HintPath>
+    <Reference Include="ibank.Types.Base, Version=0.0.0.13, Culture=neutral, PublicKeyToken=27dfa4202bdaf1e2, processorArchitecture=MSIL">
+      <HintPath>..\packages\ibank.Types.Base.0.0.0.13\lib\net40\ibank.Types.Base.dll</HintPath>
     </Reference>
     <Reference Include="Model.Hosting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2b247341e6fbc25, processorArchitecture=MSIL">
       <HintPath>..\packages\Model.Hosting.1.0.0.0\lib\net45\Model.Hosting.dll</HintPath>
@@ -79,8 +79,8 @@
     <Reference Include="Model.Types, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2b247341e6fbc25, processorArchitecture=MSIL">
       <HintPath>..\packages\Model.Hosting.1.0.0.0\lib\net45\Model.Types.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

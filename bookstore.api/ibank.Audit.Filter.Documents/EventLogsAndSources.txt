@@ -1,0 +1,28 @@
+﻿Some useful commands to create/delete event logs and sources.
+Note:
+  - Only the firts eight letters of the LogName matter and
+  - A specific Source name can be registered to ONLY ONE Logname
+
+
+Get-EventLog -List
+Remove-EventLog -LogName "LogName" -Source "ApplicationName-SourceName"
+New-EventLog -LogName "LogName" -Source "ApplicationName-SourceName"
+Limit-EventLog -LogName "LogName" -MaximumSize 20480KB -OverflowAction OverwriteAsNeeded
+Get-WmiObject win32_nteventlogfile -Filter "logfilename='LogName'" | foreach {$_.sources}
+
+
+Remove-EventLog -LogName "BD-BigData"
+Remove-EventLog -LogName "BD-Time"
+Remove-EventLog -LogName "BD-FailedCalls"
+
+New-EventLog -LogName "BD-BigData" -Source "iBank-BD-BigData"
+New-EventLog -LogName "BD-Time" -Source "iBank-BD-Time"
+New-EventLog -LogName "BD-FailedCalls" -Source "iBank-BD-FailedCalls"
+
+Limit-EventLog -LogName "BD-BigData" -MaximumSize 20480KB -OverflowAction OverwriteAsNeeded
+Limit-EventLog -LogName "BD-Time" -MaximumSize 20480KB -OverflowAction OverwriteAsNeeded
+Limit-EventLog -LogName "BD-FailedCalls" -MaximumSize 20480KB -OverflowAction OverwriteAsNeeded
+
+Get-WmiObject win32_nteventlogfile -Filter "logfilename='BD-BigData'" | foreach {$_.sources}
+Get-WmiObject win32_nteventlogfile -Filter "logfilename='BD-Time'" | foreach {$_.sources}
+Get-WmiObject win32_nteventlogfile -Filter "logfilename='BD-FailedCalls'" | foreach {$_.sources}

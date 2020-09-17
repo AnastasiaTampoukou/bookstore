@@ -1,12 +1,17 @@
 ﻿using bookstore.implementation;
 using bookstore.interfaces;
 using bookstore.types;
+using bUtility.Json;
 using bUtility.Logging;
 using bUtility.WebApi;
+using ibank.Audit;
+using Newtonsoft.Json;
 using SimpleInjector;
 using SimpleInjector.Integration.WebApi;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Filters;
 
@@ -16,7 +21,7 @@ namespace bookstore.api
     {
         private static readonly Container Container = new Container();
 
-        public static void Configure(ConfigProfile cp)
+        public static void Configure()
         {
             try
             {
@@ -25,12 +30,16 @@ namespace bookstore.api
                     RegisterRoutes(httpConf);
                     RegisterLogger();
                     RegisterServices();
+                    RegisterSqlFactories();
                     RegisterGlobalFilters(httpConf.Filters);
-                    RegisterSqlFactories(cp);
                 });
+
+                GlobalConfiguration.Configuration.EnsureInitialized();
+                Logger.Current.Info("Application Started");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Logger.Current.Error(ex, "Could not initialize Application");
             }
         }
 
@@ -60,16 +69,50 @@ namespace bookstore.api
         public static void RegisterServices()
         {
             Container.Register<IBookstoreService, BookstoreService>(Lifestyle.Singleton);
+            Container.RegisterAuditService(ConfigProfile.Current.AuditDbConnection);
         }
-        public static void RegisterGlobalFilters(HttpFilterCollection filterss)
+        public static void RegisterGlobalFilters(HttpFilterCollection filters)
         {
-            filterss.Add(new ExceptionHandlingAttribute());
+            filters.Add(new ExceptionHandlingAttribute());
+            filters.Add(new AuditFilterAttribute(
+              Container.GetInstance<IAuditService>(),
+              Logger.Current,
+              AuditSerializerSettingsProvider,
+              AuditFilterAttributeFactory.CreateAuditFilterConfigurator(),
+              null));
         }
 
-        public static void RegisterSqlFactories(ConfigProfile cp)
+        private static JsonSerializerSettings AuditSerializerSettingsProvider()
         {
-            Container.RegisterSingleton<DbProvider<IDbConnection>>(() => () => cp.DbConnection());
+            var settings = new JsonSerializerSettings();
+            SetAuditJsonSerializationSettings(settings);
+            return settings;
         }
-        
+
+        private static void SetAuditJsonSerializationSettings(JsonSerializerSettings settings)
+        {
+            settings.ContractResolver = new GenericDataContractResolver(new List<string>());
+            settings.DateTimeZoneHandling = DateTimeZoneHandling.Utc;
+            settings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+            settings.Error = ExceptionHandlingAttribute.OnSerializationError;
+        }
+
+        public static void RegisterSqlFactories()
+        {
+            Container.RegisterSingleton<DbProvider<IDbConnection>>(() => () => ConfigProfile.Current.DbConnection());
+        }
+
+        public static bool RegisterAuditService(this Container container,
+            Func<IDbConnection> auditDbConnection)
+        {
+            var isRegistered = container.GetCurrentRegistrations().Any(r => r.ServiceType == typeof(IAuditService));
+            if (!isRegistered)
+            {
+                container.Register<IAuditService>(() => new AuditService(() => auditDbConnection()));
+                return true;
+            }
+            return false;
+        }
+
     }
 }
