@@ -75,6 +75,7 @@
     <Compile Include="BorrowBookResponse.cs" />
     <Compile Include="DatabaseStatus.cs" />
     <Compile Include="GeneralTypes.cs" />
+    <Compile Include="GetAllBooksRequest.cs" />
     <Compile Include="GetAllBooksResponse.cs" />
     <Compile Include="GetBookDetailsRequest.cs" />
     <Compile Include="GetBookDetailsResponse.cs" />

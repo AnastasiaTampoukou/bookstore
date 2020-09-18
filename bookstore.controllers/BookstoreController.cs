@@ -54,7 +54,7 @@ namespace bookstore.controllers
         }
 
         [HttpPost]
-        public Response<GetAllBooksResponse> GetAllBooks()
+        public Response<GetAllBooksResponse> GetAllBooks(Request<GetAllBooksRequest> request)
         {
             return _exceptionHandler.SafeExecutor(() => _bookstoreService.GetAllBooks());
         }

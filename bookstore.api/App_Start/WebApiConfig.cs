@@ -102,7 +102,7 @@ namespace bookstore.api
             Container.RegisterSingleton<DbProvider<IDbConnection>>(() => () => ConfigProfile.Current.DbConnection());
         }
 
-        public static bool RegisterAuditService(this Container container,
+        /*public static bool RegisterAuditService(this Container container,
             Func<IDbConnection> auditDbConnection)
         {
             var isRegistered = container.GetCurrentRegistrations().Any(r => r.ServiceType == typeof(IAuditService));
@@ -112,7 +112,7 @@ namespace bookstore.api
                 return true;
             }
             return false;
-        }
+        }*/
 
     }
 }
