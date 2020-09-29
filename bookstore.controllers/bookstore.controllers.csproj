@@ -39,6 +39,12 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Nbg.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="bUtility, Version=0.0.0.7, Culture=neutral, PublicKeyToken=e2a60ca179fe72cb, processorArchitecture=MSIL">
       <HintPath>..\packages\bUtility.0.0.0.7\lib\net45\bUtility.dll</HintPath>
@@ -106,10 +112,12 @@
   <ItemGroup>
     <Compile Include="BookstoreController.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="HasScope.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Nbg.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
