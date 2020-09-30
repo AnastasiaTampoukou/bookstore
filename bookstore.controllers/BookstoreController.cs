@@ -54,6 +54,7 @@ namespace bookstore.controllers
         }
 
         [HttpPost]
+        [HasScope]
         public Response<GetAllBooksResponse> GetAllBooks(Request<GetAllBooksRequest> request)
         {
             return _exceptionHandler.SafeExecutor(() => _bookstoreService.GetAllBooks());

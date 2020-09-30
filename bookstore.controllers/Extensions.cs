@@ -1,5 +1,7 @@
 ﻿using bookstore.types;
+using bUtility.Logging;
 using ibank.Hosting.WebApi;
+using Newtonsoft.Json;
 using System;
 
 
@@ -18,6 +20,11 @@ namespace bookstore.controllers
             if (item2?.Category != bUtility.ErrorCategory.Technical) return;
             item2.Description = BookstoreException.UnrecognizedError.Message;
             item2.Code = BookstoreException.UnrecognizedError.CodeWithPrefix;
+        }
+        internal static void LogBeforeThrow(this Exception ex)
+        {
+            Logger.Current.Error(JsonConvert.SerializeObject(ex));
+            throw ex;
         }
     }
 
