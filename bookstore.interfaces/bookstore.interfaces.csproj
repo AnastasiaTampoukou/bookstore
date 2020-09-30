@@ -36,15 +36,6 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Nbg.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'dev|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\dev\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="bUtility.Logging, Version=0.0.0.1, Culture=neutral, PublicKeyToken=e2a60ca179fe72cb, processorArchitecture=MSIL">
       <HintPath>..\packages\bUtility.Logging.0.0.0.1\lib\net45\bUtility.Logging.dll</HintPath>
