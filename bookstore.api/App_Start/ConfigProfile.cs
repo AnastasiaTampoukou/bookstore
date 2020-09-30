@@ -11,6 +11,8 @@ namespace bookstore.api
         public readonly string ApiResourceName = LoadString("apiResourceName");
         public readonly string ApiResourceSecret = LoadString("apiResourceSecret");
         public readonly string RequiredScope = LoadString("requiredScope");
+        public readonly string RequiredAdminScope = LoadString("requiredAdminScope");
+
         public static ConfigProfile Current { get; set; }
 
         public readonly Func<IDbConnection> DbConnection = () =>

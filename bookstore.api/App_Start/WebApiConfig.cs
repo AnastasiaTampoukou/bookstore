@@ -11,7 +11,6 @@ using SimpleInjector.Integration.WebApi;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Filters;
 
@@ -74,7 +73,6 @@ namespace bookstore.api
         public static void RegisterGlobalFilters(HttpFilterCollection filters)
         {
             filters.Add(new AuthorizeAttribute());
-
             filters.Add(new ExceptionHandlingAttribute());
             filters.Add(new AuditFilterAttribute(
               Container.GetInstance<IAuditService>(),
